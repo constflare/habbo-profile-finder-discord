@@ -10,6 +10,6 @@ It is a simple program where we can retrieve data using Discord.js and Habbo's A
 ![Screenshot_8](https://user-images.githubusercontent.com/80849459/125947117-3ecfc77e-c431-4e72-9c15-34d672f591d3.png)
 
 
-
-
+Discorddan iletişime geçin : const#0001
+Contact me on Discord : const#0001
 
