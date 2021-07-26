@@ -1,11 +1,3 @@
-const { MessageEmbed, Message } = require("discord.js")
-const axios = require('axios')
-
-
-module.exports = {
-    name: "ara",
-    description: "Displays someone's avatar!",
-    run: async(client, message, args) => {
         const kisi = args.slice(0).join(" ")
         if(!kisi) return message.channel.send('Lütfen bir kullanıcı adı yazınız.')
         const bilgiler = 'https://www.habbo.com.tr/api/public/users?name=' + kisi
