@@ -1,3 +1,11 @@
+const { MessageEmbed, Message } = require("discord.js")
+const axios = require('axios')
+
+
+module.exports = {
+    name: "ara",
+    description: "Displays someone's avatar!",
+    run: async(client, message, args) => {
         const kisi = args.slice(0).join(" ")
         if(!kisi) return message.channel.send('Lütfen bir kullanıcı adı yazınız.')
         const bilgiler = 'https://www.habbo.com.tr/api/public/users?name=' + kisi
@@ -21,7 +29,7 @@
         )
         .addFields(
             { name: '\u200B', value: '\u200B' },
-            { name: 'Rozetler', value: 'Rozetleri görüntülemek için "i!rozet kullanıcı" komutunu kullanın.', inline: true },
+            { name: 'Rozetler', value: 'Rozetleri görüntülemek için "i!rozet kullanıcı" komutunu kullanın, kullanıcının API profiline erişmek için ' + '[buraya tıklayın](' + bilgiler + ')', inline: true },
         )
         .setImage('https://www.habbo.com.tr/habbo-imaging/avatarimage?hb=image&user=' + kisi)
         .setTimestamp()
@@ -34,7 +42,7 @@
     
         })
     })
-    .catch((err) => {
+    .catch((err) => {   
         console.error('Hata:', err)
         message.channel.send('Girdiğiniz kullanıcı bulunamadı veya profili görünmezde')
 
