@@ -6,11 +6,12 @@
         .get(bilgiler)
         .then((res) => {
             console.log(res.data)
+        let durum = res.data.online ? "\'Çevrimiçi\'" : "\'Çevrimdışı\'"
         const mottosu = res.data.motto || "Kullanıcının Mottosu Bulunmuyor"
         const embed = new MessageEmbed()
         .setTitle(kisi + ' Adlı kullanıcının avatarı')
         .setURL(profil)
-        .addField('Durum (true = Çevrimiçi | false = Çevrimdışı)', res.data.online)
+        .addField('Durum', durum)
         .addFields(
             { name: 'Motto', value: mottosu },
             { name: '\u200B', value: '\u200B' },
